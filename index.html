@@ -42,9 +42,7 @@
             console.log('state change', event.data)
             // loop video
             if (event.data === YT.PlayerState.ENDED) {
-              setTimeout(function(){
-                event.target.playVideo(); 
-              }, 100);
+              event.target.playVideo(); 
             }
           }
         }
