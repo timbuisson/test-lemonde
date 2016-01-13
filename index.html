@@ -35,8 +35,16 @@
         videoId: 'B9mIINgSxOg',
         events: {
           'onReady': function onPlayerReady(event) {
-            event.target.playVideo();
             event.target.mute();
+            event.target.playVideo();
+          },
+          onStateChange: function(){
+            // loop video
+            if (event.data == YT.PlayerState.ENDED) {
+              setTimeout(function(){
+                event.target.playVideo(); 
+              }, 100);
+            }
           }
         }
       });
