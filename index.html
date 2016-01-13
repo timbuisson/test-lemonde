@@ -44,12 +44,12 @@
             event.target.mute();
             event.target.playVideo();
           },
--          onStateChange: function(event){
--            console.log('state change', event.data)
--            // loop video
--            if (event.data === YT.PlayerState.ENDED) {
--              event.target.playVideo(); 
--            }
+          onStateChange: function(event){
+            console.log('state change', event.data)
+            // loop video
+            if (event.data === YT.PlayerState.ENDED) {
+              event.target.playVideo(); 
+            }
           }
       });
     }
