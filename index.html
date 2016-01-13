@@ -1,3 +1,58 @@
+<!doctype html>
+<html>
 <head>
-video : src=https://www.youtube.com/watch?v=9FtmWr4FqVk
+  <meta chasert="utf-8">
+  <title></title>
+  <style>
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  </style>
+  <script src="//ns.sascdn.com/diff/templates/js/banner/sas-clicktag-2.0.js"> </script>
+  <script>
+  var clickTag = "http://www.concours-sesame.net";
+  </script>
+  
+  <script>
+    "use strict";
+    
+    // https://developers.google.com/youtube/iframe_api_reference?hl=fr#Getting_Started
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '200',
+        width: '356',
+        videoId: 'B9mIINgSxOg',
+        events: {
+          'onReady': function onPlayerReady(event) {
+            event.target.playVideo();
+            event.target.mute();
+          }
+        }
+      });
+    }
+
+    var container = document.getElementsByTagName('a')[0];
+    container.addEventListener('mouseover', function(){
+      player.unMute();
+    })
+  </script>
 </head>
+<body>
+  <a href="javascript:window.open(window.clickTag, '_blank')">
+    <img src="logo1.png">
+    <div id="player"></div>
+    <img src="logo2.png">
+  </a>
+</body>
+</html>
