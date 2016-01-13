@@ -42,9 +42,11 @@
       });
     }
 
-    var container = document.getElementsByTagName('a')[0];
-    container.addEventListener('mouseover', function(){
-      player.unMute();
+    document.addEventListener('DOMContentLoaded', function(){
+      var container = document.getElementsByTagName('a')[0];
+      container.addEventListener('mouseover', function(){
+        player.unMute();
+      })
     })
   </script>
 </head>
