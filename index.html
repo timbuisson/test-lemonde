@@ -33,17 +33,14 @@
         height: '200',
         width: '356',
         videoId: 'B9mIINgSxOg',
+        playerVars: {
+          controls: 0,
+          loop: 1
+        }
         events: {
           'onReady': function onPlayerReady(event) {
             event.target.mute();
             event.target.playVideo();
-          },
-          onStateChange: function(event){
-            console.log('state change', event.data)
-            // loop video
-            if (event.data === YT.PlayerState.ENDED) {
-              event.target.playVideo(); 
-            }
           }
         }
       });
